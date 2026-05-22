@@ -1,0 +1,43 @@
+# Audit MIA — CelebA (ResNet18 — Smiling)
+
+## Metadata
+
+### Operator Metadata
+
+| | |
+|---|---|
+| **Generated_by** | Gigalis |
+
+### Execution Metadata
+
+| | |
+|---|---|
+| **Used Paname commit** | 414b1753542c8a7edc957cb943e9aa1fdf37ea2d |
+| **Report generation date** | 2026-05-19 |
+| **Random state** | 42 |
+
+### Use-case Metadata
+
+| | |
+|---|---|
+| **Target model** | ResNet18 |
+| **Model wrapper** | Model Wrapper not specified |
+| **Audit set** | 4000 samples (2000 members / 2000 non-members) |
+
+## Metrics
+
+| MIA | AUC | TPR@1% | TPR@0.01% |
+|--------|--------|--------|--------|
+| LossMIA | 0.5925 | 0.0295 | 0.0020 |
+
+- **AUC**: Illustrates the performance of the classifier : formally, it is the area under the TPR@FPR curve for different values of FPR. Probabilistically, one can interpret that as the probability, given a {member, non-member} pair, that the mia score of the member is higher than the mia score of the non-member
+- **TPR@1%**: Fraction of members that are classified as such when choosing an operating point where only 1% of actual non-members are classified as members
+- **TPR@0.01%**: Fraction of members that are classified as such when choosing an operating point where only 0.01% of actual non-members are classified as members
+
+## ROC Curves
+
+![ROC curves](mia_report_roc.png)
+
+## Score Distributions
+
+![Score distributions](mia_report_scores.png)
